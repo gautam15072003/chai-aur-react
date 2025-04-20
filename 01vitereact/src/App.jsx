@@ -1,9 +1,17 @@
+import Chai from "./Chai"
 
 function App() {
  
 
   return (
-    <h1> chai aur react|GS </h1>
+    <>    {/* ye jo khaali tags hai ye fragements kehlaye gaye kyuki ye ek hi element export krr sakte hai  */}
+
+    <Chai/>
+    <h3>chai aur code </h3>
+    <p> test para</p>
+    </>
+    
+  
   )
 }
 
