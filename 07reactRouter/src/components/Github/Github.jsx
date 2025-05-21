@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { data } from 'react-router-dom'
 
+import {useLoaderData} from  'react-router-dom'
 function Github() {
-    const [data,setData] = useState([])
-    useEffect(() => {
-      fetch('https://github.com/gautam15072003/chai-aur-react')
-      .then((Response)=>Response.json())
-      .then(data=>console.log(data)
-      )
-      setData(data)
-    }, [])
+  const data = useLoaderData ()
+    // const [data,setData] = useState([])
+    // useEffect(() => {
+    //   fetch('https://github.com/gautam15072003/chai-aur-react')
+    //   .then((Response)=>Response.json())
+    //   .then(data=>console.log(data)
+    //   )
+    //   setData(data)
+    // }, [])
     
   return (
     <div className='bg-gray-600 text-center text-3xl p-4  m-5 text-yellow-400 '>
@@ -20,3 +21,9 @@ function Github() {
 }
 
 export default Github
+
+export const githubInfoLoader = async () => {
+    const response = await fetch('https://api.github.com/users/gautam15072003')
+
+    return response.json()
+}
